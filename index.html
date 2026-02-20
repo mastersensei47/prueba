@@ -15,50 +15,81 @@
 
 body{
     background:
-    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)),
     url('ms47.jpg');
     background-size:cover;
     background-position:center;
-    background-repeat:no-repeat;
+    background-attachment:fixed;
     color:white;
-    text-align:center;
-    animation:fadein 1.5s ease-in-out;
 }
 
-@keyframes fadein{
-    from{opacity:0;}
-    to{opacity:1;}
+/* ANIMACION SCROLL */
+.animar{
+    opacity:0;
+    transform:translateY(40px);
+    transition:0.8s ease;
+}
+.animar.visible{
+    opacity:1;
+    transform:translateY(0);
 }
 
-/* ZONA SUPERIOR (VIDEOS + TITULO) */
+/* ZONA SUPERIOR */
 .zona-superior{
     display:flex;
     justify-content:center;
     align-items:center;
     gap:40px;
-    margin-top:40px;
+    padding:60px 20px;
     flex-wrap:wrap;
 }
 
 .titulo-centro h1{
     font-size:48px;
-    text-shadow:0 0 10px red,0 0 20px red,0 0 40px red;
+    text-shadow:0 0 10px red,0 0 25px red;
+}
+
+/* VIDEOS RESPONSIVE */
+.video{
+    width:350px;
+    aspect-ratio:16/9;
 }
 
 .video iframe{
-    width:350px;
-    height:200px;
+    width:100%;
+    height:100%;
     border-radius:15px;
+    box-shadow:0 0 20px red;
+}
+
+/* BOTONES DESCARGA */
+.descargas{
+    text-align:center;
+    margin-top:30px;
+}
+
+.boton{
+    display:inline-block;
+    margin:10px;
+    padding:15px 30px;
+    background:#e60000;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.boton:hover{
+    background:#990000;
+    transform:scale(1.1);
     box-shadow:0 0 20px red;
 }
 
 /* GALERIA */
 .capturas{
-    margin-top:70px;
-}
-
-.capturas h2{
-    margin-bottom:20px;
+    text-align:center;
+    margin:80px 0;
 }
 
 .galeria{
@@ -71,48 +102,51 @@ body{
 .galeria img{
     width:300px;
     border-radius:15px;
+    cursor:pointer;
     transition:0.3s;
-    box-shadow:0 0 15px black;
 }
 
 .galeria img:hover{
-    transform:scale(1.1);
-    box-shadow:0 0 25px red;
+    transform:scale(1.05);
+    box-shadow:0 0 20px red;
+}
+
+/* MODAL PANTALLA COMPLETA */
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.9);
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+}
+
+.modal img{
+    max-width:90%;
+    max-height:90%;
 }
 
 /* INDICACIONES */
 .indicaciones{
-    margin-top:70px;
     background:rgba(0,0,0,0.6);
-    padding:30px;
-    border-radius:15px;
+    padding:40px;
     width:70%;
-    margin-left:auto;
-    margin-right:auto;
-}
-
-.indicaciones h2{
-    margin-bottom:20px;
-}
-
-.indicaciones ul{
-    list-style:none;
+    margin:0 auto 80px auto;
+    border-radius:15px;
+    text-align:center;
 }
 
 .indicaciones li{
+    list-style:none;
     margin:10px 0;
-    font-size:18px;
 }
 
 /* RESPONSIVE */
 @media(max-width:900px){
-    .video iframe{
-        width:300px;
-        height:170px;
-    }
-}
-
-@media(max-width:600px){
     .zona-superior{
         flex-direction:column;
     }
@@ -122,15 +156,12 @@ body{
 
 <body>
 
-<!-- VIDEOS + TITULO -->
-<div class="zona-superior">
+<!-- ZONA SUPERIOR -->
+<div class="zona-superior animar">
 
     <div class="video">
-        <iframe 
-        src="https://www.youtube.com/embed/ID_VIDEO_1"
-        frameborder="0"
-        allowfullscreen>
-        </iframe>
+        <iframe src="https://www.youtube.com/embed/ID_VIDEO_1"
+        frameborder="0" allowfullscreen></iframe>
     </div>
 
     <div class="titulo-centro">
@@ -138,48 +169,66 @@ body{
     </div>
 
     <div class="video">
-        <iframe 
-        src="https://www.youtube.com/embed/ID_VIDEO_2"
-        frameborder="0"
-        allowfullscreen>
-        </iframe>
+        <iframe src="https://www.youtube.com/embed/ID_VIDEO_2"
+        frameborder="0" allowfullscreen></iframe>
     </div>
 
 </div>
 
-<!-- CAPTURAS -->
-<div class="capturas">
-    <h2>Capturas del Juego</h2>
+<!-- BOTONES DESCARGA -->
+<div class="descargas animar">
+    <a href="LINK_MEDIAFIRE_1" class="boton" target="_blank">⬇ Parte 1</a>
+    <a href="LINK_MEDIAFIRE_2" class="boton" target="_blank">⬇ Parte 2</a>
+    <a href="LINK_MEDIAFIRE_3" class="boton" target="_blank">⬇ Parte 3</a>
+</div>
 
+<!-- CAPTURAS -->
+<div class="capturas animar">
+    <h2>Capturas del Juego</h2>
     <div class="galeria">
-        <img src="captura1.jpg">
-        <img src="captura2.jpg">
-        <img src="captura3.jpg">
+        <img src="captura1.jpg" onclick="abrirModal(this.src)">
+        <img src="captura2.jpg" onclick="abrirModal(this.src)">
+        <img src="captura3.jpg" onclick="abrirModal(this.src)">
     </div>
 </div>
 
 <!-- INDICACIONES -->
-<div class="indicaciones">
+<div class="indicaciones animar">
     <h2>Indicaciones</h2>
     <ul>
-        <li>✔ Extraer el archivo con WinRAR</li>
+        <li>✔ Extraer con WinRAR</li>
         <li>✔ Ejecutar como administrador</li>
         <li>✔ Desactivar antivirus temporalmente</li>
         <li>✔ Disfrutar el juego</li>
     </ul>
 </div>
 
+<!-- MODAL -->
+<div class="modal" id="modal" onclick="cerrarModal()">
+    <img id="imagenModal">
+</div>
+
+<script>
+// MODAL
+function abrirModal(src){
+    document.getElementById("modal").style.display="flex";
+    document.getElementById("imagenModal").src=src;
+}
+function cerrarModal(){
+    document.getElementById("modal").style.display="none";
+}
+
+// ANIMACION SCROLL
+const elementos=document.querySelectorAll(".animar");
+window.addEventListener("scroll",()=>{
+    elementos.forEach(el=>{
+        const top=el.getBoundingClientRect().top;
+        if(top<window.innerHeight-100){
+            el.classList.add("visible");
+        }
+    });
+});
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
