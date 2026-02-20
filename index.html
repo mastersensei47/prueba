@@ -50,50 +50,15 @@ body{
   gap:25px;
 }
 
-.nav-links a, .dropbtn{
+.nav-links a{
   color:white;
   text-decoration:none;
   font-weight:bold;
-  background:none;
-  border:none;
-  cursor:pointer;
   transition:0.3s;
 }
 
-.nav-links a:hover, .dropbtn:hover{
+.nav-links a:hover{
   color:#ff0000;
-}
-
-.dropdown{
-  position:relative;
-}
-
-.dropdown-content{
-  position:absolute;
-  top:35px;
-  left:0;
-  background:#1b1b1b;
-  min-width:200px;
-  border-radius:8px;
-  opacity:0;
-  transform:translateY(-10px);
-  pointer-events:none;
-  transition:0.3s;
-}
-
-.dropdown-content a{
-  display:block;
-  padding:12px;
-}
-
-.dropdown-content a:hover{
-  background:#2a2a2a;
-}
-
-.dropdown:hover .dropdown-content{
-  opacity:1;
-  transform:translateY(0);
-  pointer-events:auto;
 }
 
 /* HAMBURGUESA */
@@ -127,23 +92,16 @@ body{
     transform:translateX(0);
   }
 
-  .dropdown-content{
-    position:static;
-    opacity:1;
-    transform:none;
-    pointer-events:auto;
-  }
-
   .hamburger{
     display:flex;
   }
 }
 
-/* CONTENIDO */
+/* ===== CONTENIDO ===== */
 main{
   margin-top:120px;
   text-align:center;
-  padding:40px;
+  padding:40px 20px;
 }
 
 .videos-principales{
@@ -178,17 +136,7 @@ main{
 
     <div class="nav-links" id="navLinks">
       <a href="index.html">Inicio</a>
-
-      <div class="dropdown">
-        <button class="dropbtn">Categorías ▾</button>
-        <div class="dropdown-content">
-          <a href="terror.html">👻 Terror</a>
-          <a href="mundo-abierto.html">🌍 Mundo Abierto</a>
-          <a href="programas.html">💻 Programas</a>
-          <a href="accion.html">🔥 Acción</a>
-        </div>
-      </div>
-
+      <a href="categorias.html">Categorías</a>
       <a href="https://youtube.com/" target="_blank">YouTube</a>
       <a href="https://instagram.com/" target="_blank">Instagram</a>
     </div>
@@ -196,11 +144,12 @@ main{
 </nav>
 
 <main>
+
   <h1>Bienvenido a MS47</h1>
 
   <div class="videos-principales">
     <iframe src="https://www.youtube.com/embed/8zIDzPJnzpY" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/VIDEO_2" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe>
   </div>
 
 </main>
