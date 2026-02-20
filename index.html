@@ -46,7 +46,6 @@ body{
 
 .nav-links{
   display:flex;
-  align-items:center;
   gap:20px;
 }
 
@@ -61,83 +60,65 @@ body{
   color:#ff0000;
 }
 
-/* RESPONSIVE NAV */
-.hamburger{
-  display:none;
-  flex-direction:column;
-  gap:5px;
-  cursor:pointer;
-}
-
-.hamburger span{
-  width:25px;
-  height:3px;
-  background:white;
-}
-
-@media(max-width:900px){
-  .nav-links{
-    position:absolute;
-    top:60px;
-    right:0;
-    background:#111;
-    flex-direction:column;
-    width:250px;
-    padding:20px;
-    transform:translateX(100%);
-    transition:0.4s;
-  }
-
-  .nav-links.active{
-    transform:translateX(0);
-  }
-
-  .hamburger{
-    display:flex;
-  }
-}
-
 /* ===== CONTENIDO ===== */
 main{
-  margin-top:120px;
+  margin-top:130px;
   padding:40px 20px;
-  max-width:1200px;
+  max-width:1300px;
   margin-left:auto;
   margin-right:auto;
 }
 
-h1{
-  text-align:center;
-  margin-bottom:30px;
-  font-size:32px;
-}
-
-/* VIDEOS */
-.videos{
+/* ===== HERO SECCIÓN ===== */
+.hero{
   display:flex;
-  justify-content:center;
-  gap:40px;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
   flex-wrap:wrap;
-  margin-bottom:40px;
 }
 
-.videos iframe{
-  width:480px;
-  max-width:100%;
-  height:270px;
-  border-radius:10px;
-  box-shadow:0 0 20px black;
+.video{
+  flex:1;
+  min-width:300px;
 }
 
-/* LINKS PARTES */
+.video iframe{
+  width:100%;
+  height:300px;
+  border-radius:12px;
+  box-shadow:0 0 25px black;
+}
+
+.titulo{
+  flex:1;
+  text-align:center;
+  min-width:250px;
+}
+
+.titulo h1{
+  font-size:34px;
+  margin-bottom:10px;
+}
+
+.titulo p{
+  color:#aaa;
+}
+
+/* ===== PARTES ===== */
 .partes{
-  margin-bottom:40px;
+  margin-top:40px;
+  text-align:center;
+}
+
+.partes h2{
+  margin-bottom:15px;
 }
 
 .partes a{
   display:inline-block;
-  margin:5px;
-  padding:10px 15px;
+  margin:6px;
+  padding:10px 18px;
   background:#1b1b1b;
   border-radius:6px;
   text-decoration:none;
@@ -149,44 +130,40 @@ h1{
   background:#ff0000;
 }
 
-/* DESCARGAS */
-.descargas{
-  margin-bottom:40px;
-}
-
-.descargas a{
-  display:inline-block;
-  margin:5px;
-  padding:12px 20px;
-  background:#ff0000;
-  border-radius:6px;
-  text-decoration:none;
-  color:white;
-  font-weight:bold;
-}
-
-/* INFO */
+/* ===== INFO ===== */
 .info{
-  margin-bottom:40px;
+  margin-top:50px;
   line-height:1.6;
+  text-align:center;
+  max-width:900px;
+  margin-left:auto;
+  margin-right:auto;
 }
 
-/* CAPTURAS */
+/* ===== GALERÍA ===== */
 .galeria{
+  margin-top:40px;
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
   gap:15px;
 }
 
 .galeria img{
   width:100%;
-  border-radius:8px;
+  border-radius:10px;
   cursor:pointer;
   transition:0.3s;
 }
 
 .galeria img:hover{
   transform:scale(1.05);
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .hero{
+    flex-direction:column;
+  }
 }
 </style>
 </head>
@@ -196,12 +173,7 @@ h1{
 <nav class="navbar">
   <div class="nav-container">
     <div class="logo">MS47</div>
-
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </div>
-
-    <div class="nav-links" id="navLinks">
+    <div class="nav-links">
       <a href="index.html">Inicio</a>
       <a href="categorias.html">Categorías</a>
       <a href="https://youtube.com/" target="_blank">YouTube</a>
@@ -213,46 +185,52 @@ h1{
 
 <main>
 
-<h1>Nombre del Juego</h1>
+<!-- HERO -->
+<section class="hero">
 
-<div class="videos">
-  <iframe src="https://www.youtube.com/embed/8zIDzPJnzpY" allowfullscreen></iframe>
-  <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe>
-</div>
+  <!-- VIDEO IZQUIERDA -->
+  <div class="video">
+    <iframe src="https://www.youtube.com/embed/8zIDzPJnzpY" allowfullscreen></iframe>
+  </div>
 
-<div class="partes">
+  <!-- TITULO CENTRO -->
+  <div class="titulo">
+    <h1>Nombre del Juego</h1>
+    <p>Serie completa gameplay en español</p>
+  </div>
+
+  <!-- VIDEO DERECHA -->
+  <div class="video">
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe>
+  </div>
+
+</section>
+
+<!-- PARTES -->
+<section class="partes">
   <h2>Partes del Gameplay</h2>
   <a href="#">Parte 1</a>
   <a href="#">Parte 2</a>
   <a href="#">Parte 3</a>
-</div>
+  <a href="#">Parte 4</a>
+</section>
 
-<div class="descargas">
-  <h2>Descargar</h2>
-  <a href="#">Descargar Mega</a>
-  <a href="#">Descargar Mediafire</a>
-</div>
-
-<div class="info">
+<!-- INFO -->
+<section class="info">
   <h2>Información del Juego</h2>
   <p>
-  Acá va la descripción del juego, requisitos, historia, etc.
+  Acá va la descripción del juego, historia, requisitos y detalles importantes.
   </p>
-</div>
+</section>
 
-<div class="galeria">
+<!-- GALERÍA -->
+<section class="galeria">
   <img src="IMAGEN_1.jpg">
   <img src="IMAGEN_2.jpg">
   <img src="IMAGEN_3.jpg">
-</div>
+</section>
 
 </main>
-
-<script>
-function toggleMenu(){
-  document.getElementById("navLinks").classList.toggle("active");
-}
-</script>
 
 </body>
 </html>
