@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🟨 Aventura | MS47</title>
+<title>Aventura | MS47</title>
 
 <style>
 body{
@@ -82,7 +82,7 @@ header{
 </div>
 
 <script>
-/* 🔐 PEGA TU API KEY ENTRE LAS COMILLAS */
+// 🔐 PONE AQUÍ TU API KEY (sin comillas extras)
 const API_KEY = "AIzaSyCN5aFqwNDIvgDx30F98gc3Hqvw9_tLq4g";
 const PLAYLIST_ID = "PLmrN7pAkmKvkvMZ00RXSXV_llDSWti34Q";
 
@@ -90,7 +90,6 @@ let nextPageToken = "";
 
 async function loadVideos() {
     let url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${PLAYLIST_ID}&key=${API_KEY}`;
-
     if(nextPageToken){
         url += `&pageToken=${nextPageToken}`;
     }
@@ -125,11 +124,11 @@ async function loadVideos() {
             document.getElementById("videosGrid").appendChild(card);
         });
 
-        if(nextPageToken){
-            loadVideos();
-        } else {
+        if(!nextPageToken){
             document.getElementById("loader").innerText =
                 "Todos los videos cargados ✔";
+        } else {
+            loadVideos();
         }
 
     } catch(err) {
