@@ -6,38 +6,31 @@
 <title>Categorías - MS47</title>
 
 <style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
 body{
   background:#0e0e0e;
   color:white;
-  font-family:Arial;
-  margin:0;
   padding:100px 20px 40px 20px;
-}
-
-/* BOTÓN VOLVER */
-.volver{
-  display:inline-block;
-  margin-bottom:30px;
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-.volver:hover{
-  color:#ff0000;
 }
 
 h1{
   text-align:center;
   margin-bottom:40px;
+  font-size:30px;
 }
 
-/* GRID MÁS PROLIJO */
+/* GRID PRO */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
   gap:20px;
-  max-width:1100px;
+  max-width:1200px;
   margin:auto;
 }
 
@@ -45,54 +38,82 @@ h1{
   background:#1b1b1b;
   border-radius:10px;
   overflow:hidden;
-  transition:0.3s;
   cursor:pointer;
+  transition:0.3s;
+  text-align:center;
+  padding:25px 15px;
 }
 
 .card:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 15px black;
+  transform:translateY(-5px);
+  box-shadow:0 0 20px black;
 }
 
-.card img{
-  width:100%;
-  display:block;
+.icon{
+  font-size:40px;
+  margin-bottom:10px;
 }
 
 .card h3{
-  padding:10px;
-  font-size:14px;
-  text-align:center;
+  font-size:16px;
 }
 </style>
 </head>
 
 <body>
 
-<a href="index.html" class="volver">⬅ Volver al inicio</a>
-
 <h1>🎮 Categorías</h1>
 
 <div class="grid">
 
-  <div class="card" onclick="window.location.href='terror.html'">
-    <img src="https://img.youtube.com/vi/8zIDzPJnzpY/hqdefault.jpg">
-    <h3>👻 Terror</h3>
+  <div class="card" onclick="window.location.href='minecraft.html'">
+    <div class="icon">🧱</div>
+    <h3>Minecraft & Versiones</h3>
   </div>
 
-  <div class="card" onclick="window.location.href='mundo-abierto.html'">
-    <img src="https://img.youtube.com/vi/VIDEO_ID_2/hqdefault.jpg">
-    <h3>🌍 Mundo Abierto</h3>
+  <div class="card" onclick="window.location.href='deportes.html'">
+    <div class="icon">⚽</div>
+    <h3>Deportes</h3>
+  </div>
+
+  <div class="card" onclick="window.location.href='aventura.html'">
+    <div class="icon">🗺</div>
+    <h3>Aventura</h3>
+  </div>
+
+  <div class="card" onclick="window.location.href='retro.html'">
+    <div class="icon">🕹</div>
+    <h3>Retro & Clásicos</h3>
+  </div>
+
+  <div class="card" onclick="window.location.href='online.html'">
+    <div class="icon">🌐</div>
+    <h3>Juegos Online</h3>
+  </div>
+
+  <div class="card" onclick="window.location.href='simuladores.html'">
+    <div class="icon">🚗</div>
+    <h3>Simulación</h3>
   </div>
 
   <div class="card" onclick="window.location.href='programas.html'">
-    <img src="https://img.youtube.com/vi/VIDEO_ID_3/hqdefault.jpg">
-    <h3>💻 Programas</h3>
+    <div class="icon">💻</div>
+    <h3>Programas & Utilidades</h3>
   </div>
 
-  <div class="card" onclick="window.location.href='accion.html'">
-    <img src="https://img.youtube.com/vi/VIDEO_ID_4/hqdefault.jpg">
-    <h3>🔥 Acción</h3>
+  <div class="card" onclick="window.location.href='mundo-abierto.html'">
+    <div class="icon">🌍</div>
+    <h3>Mundo Abierto</h3>
+  </div>
+
+  <div class="card" onclick="window.location.href='terror.html'">
+    <div class="icon">👻</div>
+    <h3>Terror</h3>
+  </div>
+
+  <div class="card" onclick="window.location.href='dinosaurios.html'">
+    <div class="icon">🦖</div>
+    <h3>Dinosaurios</h3>
   </div>
 
 </div>
