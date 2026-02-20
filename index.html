@@ -3,93 +3,175 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Descarga - es una prueba </title>
+<title>Descarga - MS47</title>
 
 <style>
-body{
+*{
     margin:0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
-    url("ms47.jpg");
-    background-size: cover;
-    background-position: center;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url('ms47.jpg');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
     color:white;
     text-align:center;
+    animation:fadein 1.5s ease-in-out;
 }
 
-.container{
-    padding:40px 20px;
+@keyframes fadein{
+    from{opacity:0;}
+    to{opacity:1;}
 }
 
-h1{
-    font-size:40px;
-    margin-bottom:10px;
-    text-shadow: 0 0 15px red;
-}
-
-.banner{
-    width:300px;
-    margin:20px auto;
-    display:block;
-    box-shadow: 0 0 25px red;
-    border-radius:10px;
-}
-
-.btn{
-    display:block;
-    width:250px;
-    margin:15px auto;
-    padding:15px;
-    background:red;
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-    border-radius:8px;
-    transition:0.3s;
-}
-
-.btn:hover{
-    background:darkred;
-    box-shadow:0 0 15px red;
-}
-
-.social{
+/* ZONA SUPERIOR (VIDEOS + TITULO) */
+.zona-superior{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:40px;
     margin-top:40px;
+    flex-wrap:wrap;
 }
 
-.social a{
-    color:white;
-    margin:0 10px;
-    text-decoration:none;
-    font-weight:bold;
+.titulo-centro h1{
+    font-size:48px;
+    text-shadow:0 0 10px red,0 0 20px red,0 0 40px red;
+}
+
+.video iframe{
+    width:350px;
+    height:200px;
+    border-radius:15px;
+    box-shadow:0 0 20px red;
+}
+
+/* GALERIA */
+.capturas{
+    margin-top:70px;
+}
+
+.capturas h2{
+    margin-bottom:20px;
+}
+
+.galeria{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.galeria img{
+    width:300px;
+    border-radius:15px;
+    transition:0.3s;
+    box-shadow:0 0 15px black;
+}
+
+.galeria img:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 25px red;
+}
+
+/* INDICACIONES */
+.indicaciones{
+    margin-top:70px;
+    background:rgba(0,0,0,0.6);
+    padding:30px;
+    border-radius:15px;
+    width:70%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.indicaciones h2{
+    margin-bottom:20px;
+}
+
+.indicaciones ul{
+    list-style:none;
+}
+
+.indicaciones li{
+    margin:10px 0;
+    font-size:18px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .video iframe{
+        width:300px;
+        height:170px;
+    }
+}
+
+@media(max-width:600px){
+    .zona-superior{
+        flex-direction:column;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<!-- VIDEOS + TITULO -->
+<div class="zona-superior">
 
-<h1>nombre del juego</h1>
+    <div class="video">
+        <iframe 
+        src="https://www.youtube.com/embed/ID_VIDEO_1"
+        frameborder="0"
+        allowfullscreen>
+        </iframe>
+    </div>
 
-<img class="banner" src="1366_2000.jpg">
+    <div class="titulo-centro">
+        <h1>DESCARGA MS47</h1>
+    </div>
 
-<a class="btn" href="LINK_DE_MEDIAFIRE_PARTE1" target="_blank">Descargar Parte 1</a>
-<a class="btn" href="LINK_DE_MEDIAFIRE_PARTE2" target="_blank">Descargar Parte 2</a>
-<a class="btn" href="LINK_DE_MEDIAFIRE_PARTE3" target="_blank">Descargar Parte 3</a>
-<a class="btn" href="LINK_DE_MEDIAFIRE_PARTE4" target="_blank">Descargar Parte 4</a>   
+    <div class="video">
+        <iframe 
+        src="https://www.youtube.com/embed/ID_VIDEO_2"
+        frameborder="0"
+        allowfullscreen>
+        </iframe>
+    </div>
 
-<div class="social">
-<p>Sígueme en:</p>
-<a href="https://www.youtube.com/@mastersensei-47/videos" target="_blank">YouTube</a> |
-<a href="LINK_INSTAGRAM" target="_blank">Instagram</a> |
-<a href="https://www.tiktok.com/@mastersensei47?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a>
 </div>
 
+<!-- CAPTURAS -->
+<div class="capturas">
+    <h2>Capturas del Juego</h2>
+
+    <div class="galeria">
+        <img src="captura1.jpg">
+        <img src="captura2.jpg">
+        <img src="captura3.jpg">
+    </div>
+</div>
+
+<!-- INDICACIONES -->
+<div class="indicaciones">
+    <h2>Indicaciones</h2>
+    <ul>
+        <li>✔ Extraer el archivo con WinRAR</li>
+        <li>✔ Ejecutar como administrador</li>
+        <li>✔ Desactivar antivirus temporalmente</li>
+        <li>✔ Disfrutar el juego</li>
+    </ul>
 </div>
 
 </body>
 </html>
+
 
 
 
