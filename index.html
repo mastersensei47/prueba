@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MS47</title>
+<title>Nombre del Juego - MS47</title>
 
 <style>
 *{
@@ -47,7 +47,7 @@ body{
 .nav-links{
   display:flex;
   align-items:center;
-  gap:25px;
+  gap:20px;
 }
 
 .nav-links a{
@@ -61,7 +61,7 @@ body{
   color:#ff0000;
 }
 
-/* HAMBURGUESA */
+/* RESPONSIVE NAV */
 .hamburger{
   display:none;
   flex-direction:column;
@@ -100,24 +100,93 @@ body{
 /* ===== CONTENIDO ===== */
 main{
   margin-top:120px;
-  text-align:center;
   padding:40px 20px;
+  max-width:1200px;
+  margin-left:auto;
+  margin-right:auto;
 }
 
-.videos-principales{
+h1{
+  text-align:center;
+  margin-bottom:30px;
+  font-size:32px;
+}
+
+/* VIDEOS */
+.videos{
   display:flex;
   justify-content:center;
   gap:40px;
   flex-wrap:wrap;
-  margin-top:40px;
+  margin-bottom:40px;
 }
 
-.videos-principales iframe{
-  width:500px;
-  max-width:90%;
-  height:280px;
+.videos iframe{
+  width:480px;
+  max-width:100%;
+  height:270px;
   border-radius:10px;
   box-shadow:0 0 20px black;
+}
+
+/* LINKS PARTES */
+.partes{
+  margin-bottom:40px;
+}
+
+.partes a{
+  display:inline-block;
+  margin:5px;
+  padding:10px 15px;
+  background:#1b1b1b;
+  border-radius:6px;
+  text-decoration:none;
+  color:white;
+  transition:0.3s;
+}
+
+.partes a:hover{
+  background:#ff0000;
+}
+
+/* DESCARGAS */
+.descargas{
+  margin-bottom:40px;
+}
+
+.descargas a{
+  display:inline-block;
+  margin:5px;
+  padding:12px 20px;
+  background:#ff0000;
+  border-radius:6px;
+  text-decoration:none;
+  color:white;
+  font-weight:bold;
+}
+
+/* INFO */
+.info{
+  margin-bottom:40px;
+  line-height:1.6;
+}
+
+/* CAPTURAS */
+.galeria{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  gap:15px;
+}
+
+.galeria img{
+  width:100%;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.galeria img:hover{
+  transform:scale(1.05);
 }
 </style>
 </head>
@@ -129,9 +198,7 @@ main{
     <div class="logo">MS47</div>
 
     <div class="hamburger" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </div>
 
     <div class="nav-links" id="navLinks">
@@ -139,18 +206,45 @@ main{
       <a href="categorias.html">Categorías</a>
       <a href="https://youtube.com/" target="_blank">YouTube</a>
       <a href="https://instagram.com/" target="_blank">Instagram</a>
+      <a href="https://tiktok.com/" target="_blank">TikTok</a>
     </div>
   </div>
 </nav>
 
 <main>
 
-  <h1>Bienvenido a MS47</h1>
+<h1>Nombre del Juego</h1>
 
-  <div class="videos-principales">
-    <iframe src="https://www.youtube.com/embed/8zIDzPJnzpY" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe>
-  </div>
+<div class="videos">
+  <iframe src="https://www.youtube.com/embed/8zIDzPJnzpY" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe>
+</div>
+
+<div class="partes">
+  <h2>Partes del Gameplay</h2>
+  <a href="#">Parte 1</a>
+  <a href="#">Parte 2</a>
+  <a href="#">Parte 3</a>
+</div>
+
+<div class="descargas">
+  <h2>Descargar</h2>
+  <a href="#">Descargar Mega</a>
+  <a href="#">Descargar Mediafire</a>
+</div>
+
+<div class="info">
+  <h2>Información del Juego</h2>
+  <p>
+  Acá va la descripción del juego, requisitos, historia, etc.
+  </p>
+</div>
+
+<div class="galeria">
+  <img src="IMAGEN_1.jpg">
+  <img src="IMAGEN_2.jpg">
+  <img src="IMAGEN_3.jpg">
+</div>
 
 </main>
 
