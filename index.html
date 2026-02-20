@@ -7,234 +7,207 @@
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
 }
 
 body{
-    background:#0e0e0e;
-    color:white;
+  background:#0e0e0e;
+  color:white;
 }
 
 /* ===== NAVBAR ===== */
 .navbar{
-    width:100%;
-    background:#111;
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:1000;
-    box-shadow:0 2px 15px black;
+  width:100%;
+  background:#111;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:1000;
+  box-shadow:0 2px 15px black;
 }
 
 .nav-container{
-    max-width:1200px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 20px;
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 20px;
 }
 
 .logo{
-    font-size:22px;
-    font-weight:bold;
-    color:white;
-    text-shadow:0 0 10px red;
+  font-size:22px;
+  font-weight:bold;
+  text-shadow:0 0 10px red;
 }
 
-/* MENU */
 .nav-links{
-    display:flex;
-    align-items:center;
-    gap:25px;
+  display:flex;
+  align-items:center;
+  gap:25px;
 }
 
-.nav-links a{
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-    position:relative;
-    transition:0.3s;
+.nav-links a, .dropbtn{
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  background:none;
+  border:none;
+  cursor:pointer;
+  transition:0.3s;
 }
 
-.nav-links a:hover{
-    color:#ff0000;
+.nav-links a:hover, .dropbtn:hover{
+  color:#ff0000;
 }
 
-/* ACTIVO */
-.nav-links a.active{
-    color:#ff0000;
-}
-
-/* DROPDOWN */
 .dropdown{
-    position:relative;
-}
-
-.dropbtn{
-    background:none;
-    border:none;
-    color:white;
-    font-weight:bold;
-    cursor:pointer;
-    font-size:16px;
+  position:relative;
 }
 
 .dropdown-content{
-    position:absolute;
-    top:35px;
-    left:0;
-    background:#1b1b1b;
-    min-width:220px;
-    border-radius:8px;
-    overflow:hidden;
-    box-shadow:0 0 20px black;
-    opacity:0;
-    transform:translateY(-10px);
-    pointer-events:none;
-    transition:0.3s ease;
+  position:absolute;
+  top:35px;
+  left:0;
+  background:#1b1b1b;
+  min-width:200px;
+  border-radius:8px;
+  opacity:0;
+  transform:translateY(-10px);
+  pointer-events:none;
+  transition:0.3s;
 }
 
 .dropdown-content a{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    padding:12px;
-    color:white;
-    text-decoration:none;
-    transition:0.3s;
+  display:block;
+  padding:12px;
 }
 
 .dropdown-content a:hover{
-    background:#2a2a2a;
-    color:#ff0000;
+  background:#2a2a2a;
 }
 
 .dropdown:hover .dropdown-content{
-    opacity:1;
-    transform:translateY(0);
-    pointer-events:auto;
-}
-
-/* ICONOS */
-.icon{
-    font-size:18px;
+  opacity:1;
+  transform:translateY(0);
+  pointer-events:auto;
 }
 
 /* HAMBURGUESA */
 .hamburger{
-    display:none;
-    flex-direction:column;
-    cursor:pointer;
-    gap:5px;
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
 }
 
 .hamburger span{
-    width:25px;
-    height:3px;
-    background:white;
-    transition:0.3s;
+  width:25px;
+  height:3px;
+  background:white;
 }
 
-/* RESPONSIVE */
 @media(max-width:900px){
+  .nav-links{
+    position:absolute;
+    top:60px;
+    right:0;
+    background:#111;
+    flex-direction:column;
+    width:250px;
+    padding:20px;
+    transform:translateX(100%);
+    transition:0.4s;
+  }
 
-    .nav-links{
-        position:absolute;
-        top:60px;
-        right:0;
-        background:#111;
-        flex-direction:column;
-        width:250px;
-        padding:20px;
-        gap:20px;
-        transform:translateX(100%);
-        transition:0.4s;
-    }
+  .nav-links.active{
+    transform:translateX(0);
+  }
 
-    .nav-links.active{
-        transform:translateX(0);
-    }
+  .dropdown-content{
+    position:static;
+    opacity:1;
+    transform:none;
+    pointer-events:auto;
+  }
 
-    .dropdown-content{
-        position:static;
-        opacity:1;
-        transform:none;
-        pointer-events:auto;
-        box-shadow:none;
-        background:#1a1a1a;
-        margin-top:10px;
-    }
-
-    .hamburger{
-        display:flex;
-    }
+  .hamburger{
+    display:flex;
+  }
 }
 
-/* ESPACIO CONTENIDO */
-.content{
-    margin-top:100px;
-    padding:40px;
-    text-align:center;
+/* CONTENIDO */
+main{
+  margin-top:120px;
+  text-align:center;
+  padding:40px;
+}
+
+.videos-principales{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  flex-wrap:wrap;
+  margin-top:40px;
+}
+
+.videos-principales iframe{
+  width:500px;
+  max-width:90%;
+  height:280px;
+  border-radius:10px;
+  box-shadow:0 0 20px black;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar">
-    <div class="nav-container">
+  <div class="nav-container">
+    <div class="logo">MS47</div>
 
-        <div class="logo">MS47</div>
-
-        <div class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-
-        <div class="nav-links" id="navLinks">
-
-            <a href="#" class="active">Inicio</a>
-
-            <div class="dropdown">
-                <button class="dropbtn">Categorías ▾</button>
-                <div class="dropdown-content">
-                    <a href="LINK_TERROR" target="_blank">
-                        <span class="icon">👻</span> Terror
-                    </a>
-                    <a href="LINK_MUNDO_ABIERTO" target="_blank">
-                        <span class="icon">🌍</span> Mundo Abierto
-                    </a>
-                    <a href="LINK_PROGRAMAS" target="_blank">
-                        <span class="icon">💻</span> Programas
-                    </a>
-                    <a href="LINK_ACCION" target="_blank">
-                        <span class="icon">🔥</span> Acción
-                    </a>
-                </div>
-            </div>
-
-            <a href="https://youtube.com/" target="_blank">YouTube</a>
-            <a href="https://instagram.com/" target="_blank">Instagram</a>
-
-        </div>
-
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
+
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Inicio</a>
+
+      <div class="dropdown">
+        <button class="dropbtn">Categorías ▾</button>
+        <div class="dropdown-content">
+          <a href="terror.html">👻 Terror</a>
+          <a href="mundo-abierto.html">🌍 Mundo Abierto</a>
+          <a href="programas.html">💻 Programas</a>
+          <a href="accion.html">🔥 Acción</a>
+        </div>
+      </div>
+
+      <a href="https://youtube.com/" target="_blank">YouTube</a>
+      <a href="https://instagram.com/" target="_blank">Instagram</a>
+    </div>
+  </div>
 </nav>
 
-<div class="content">
-    <h1>Bienvenido a MS47</h1>
-    <p>Contenido gamer organizado por categorías.</p>
-</div>
+<main>
+  <h1>Bienvenido a MS47</h1>
+
+  <div class="videos-principales">
+    <iframe src="https://www.youtube.com/embed/8zIDzPJnzpY" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/VIDEO_2" allowfullscreen></iframe>
+  </div>
+
+</main>
 
 <script>
 function toggleMenu(){
-    document.getElementById("navLinks").classList.toggle("active");
+  document.getElementById("navLinks").classList.toggle("active");
 }
 </script>
 
