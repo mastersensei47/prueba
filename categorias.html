@@ -1,132 +1,156 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Categorías</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto&display=swap" rel="stylesheet">
-  <!-- Font Awesome para íconos -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background: #f4f4f4;
-      color: #333;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MS47 - Categorías</title>
 
-    /* Banner */
-    .banner {
-      background: url("ms47.jpg") center/cover no-repeat;
-      height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-    .banner::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.6);
-    }
-    .banner h1 {
-      position: relative;
-      font-family: 'Poppins', sans-serif;
-      font-size: 60px;
-      font-weight: 700;
-      color: #ff2e2e;
-      text-shadow: 0 0 20px #ff0000;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    /* Sección de categorías */
-    .categorias {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 40px;
-    }
-    .categoria {
-      background: #fff;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .categoria:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-    }
-    .categoria img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-    .categoria h2 {
-      margin: 15px;
-      font-family: 'Poppins', sans-serif;
-      font-size: 22px;
-      color: #222;
-    }
+<style>
+body{
+    margin:0;
+    font-family:'Montserrat',sans-serif;
+    background:#0f0f0f;
+    color:white;
+}
 
-    /* Redes sociales */
-    .redes {
-      text-align: center;
-      margin: 25px 0;
-    }
-    .redes a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #ff2e2e;
-      font-size: 20px;
-      transition: color 0.3s;
-    }
-    .redes a:hover {
-      color: #333;
-    }
+/* ====== BANNER ====== */
+.banner{
+    background:url("ms47.jpg") center/cover no-repeat;
+    height:300px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+.banner::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.6);
+}
+.banner h1{
+    position:relative;
+    font-size:60px;
+    font-weight:900;
+    color:#ff2e2e;
+    text-shadow:0 0 20px #ff0000;
+}
 
-    /* Footer */
-    footer {
-      background: #222;
-      color: #fff;
-      text-align: center;
-      padding: 15px;
-      margin-top: 40px;
-    }
-  </style>
+/* ===== REDES ===== */
+.redes{
+    text-align:center;
+    margin:25px 0;
+}
+.redes a{
+    margin:0 15px;
+    font-size:22px;
+    color:#ff2e2e;
+    transition:0.3s;
+}
+.redes a:hover{
+    color:white;
+}
+
+/* ===== CATEGORIAS ===== */
+.categorias{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 20px;
+}
+.categorias h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:35px;
+}
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+.card{
+    background:#1c1c1c;
+    border-radius:15px;
+    overflow:hidden;
+    transition:0.4s;
+    text-align:center;
+}
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+.card h3{
+    padding:15px;
+}
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 25px #ff2e2e;
+}
+.card a{
+    display:block;
+    color:white;
+    text-decoration:none;
+}
+
+/* ===== FOOTER ===== */
+footer{
+    text-align:center;
+    padding:30px;
+    background:#111;
+    margin-top:40px;
+    font-size:14px;
+    color:#aaa;
+}
+</style>
 </head>
+
 <body>
 
-  <div class="banner">
-    <h1>Categorías</h1>
-  </div>
+<div class="banner">
+    <h1>mastersensei47</h1>
+</div>
 
-  <section class="categorias">
-    <div class="categoria">
-      <img src="aventura.jpg" alt="Aventura">
-      <h2>Aventura</h2>
-    </div>
-    <div class="categoria">
-      <img src="deportes.jpg" alt="Deportes">
-      <h2>Deportes</h2>
-    </div>
-    <div class="categoria">
-      <img src="terror.jpg" alt="Terror">
-      <h2>Terror</h2>
-    </div>
-    <!-- Agrega más categorías aquí -->
-  </section>
-
-  <div class="redes">
-    <a href="#"><i class="fab fa-facebook"></i></a>
+<div class="redes">
     <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-  </div>
+    <a href="#"><i class="fab fa-tiktok"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+</div>
 
-  <footer>
-    <p>© 2026 Todos los derechos reservados</p>
-  </footer>
+<section class="categorias">
+    <h2>🎮 Categorías</h2>
+    <div class="grid">
+
+        <div class="card">
+            <a href="minecraft.html">
+                <img src="img/minecraft.jpg" alt="Minecraft">
+                <h3>Minecraft & Versiones</h3>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="deportes.html">
+                <img src="img/deportes.jpg" alt="Deportes">
+                <h3>Deportes</h3>
+            </a>
+        </div>
+
+        <div class="card">
+            <a href="aventura.html">
+                <img src="img/aventura.jpg" alt="Aventura">
+                <h3>Aventura</h3>
+            </a>
+        </div>
+
+        <!-- Repite la misma estructura para las demás categorías -->
+    </div>
+</section>
+
+<footer>
+© 2026 mastersensei47 - Todos los derechos reservados
+</footer>
 
 </body>
 </html>
